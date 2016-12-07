@@ -1,4 +1,4 @@
-# 08_manual_robot_continuous.py
+# based on MonkMakes 08_manual_robot_continuous.py
 # Use the arrow keys to direct the robot
 
 from multiprocessing import Process
@@ -7,6 +7,7 @@ from rrb3 import *
 import sys
 import tty
 import termios
+import time
 
 rr = RRB3(9.0, 6.0) # battery, motor
 motor_speed = 0.4
@@ -46,11 +47,10 @@ def readkey(getchar_fn=None):
 def loop_a():
     while 1:    
         distance = rr.get_distance()
-        #print (distance)
         if distance < 20:
             print (distance)
             rr.reverse(2, motor_speed)
-            print 'sensor'
+            print 'sensor'            
 #            break
 
 # This will control the movement of your robot and display on your screen
