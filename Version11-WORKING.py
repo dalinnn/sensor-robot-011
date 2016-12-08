@@ -7,7 +7,6 @@ from rrb3 import *
 import sys
 import tty
 import termios
-import time
 
 rr = RRB3(9.0, 6.0) # battery, motor
 motor_speed = 0.4
@@ -47,6 +46,7 @@ def readkey(getchar_fn=None):
 def loop_a():
     while 1:    
         distance = rr.get_distance()
+#        print (distance)
         if distance < 20:
             print (distance)
             rr.reverse(2, motor_speed)
