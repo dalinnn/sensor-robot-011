@@ -2,7 +2,6 @@
 # Use the arrow keys to direct the robot
 
 from multiprocessing import Process
-
 from rrb3 import *
 import sys
 import tty
@@ -17,9 +16,9 @@ RIGHT = 2
 LEFT = 3
 
 print("Use the arrow keys to move the robot")
-print("Press CTRL-c to quit the program")
+print("Press CTRL-c TWICE to quit the program")
 
-# These two functions allow the program to read your keyboard
+# These nexttwo functions allow the program to read your keyboard
 def readchar():
     fd = sys.stdin.fileno()
     old_settings = termios.tcgetattr(fd)
@@ -43,20 +42,20 @@ def readkey(getchar_fn=None):
     c3 = getchar()
     return ord(c3) - 65  # 0=Up, 1=Down, 2=Right, 3=Left arrows
 
+# This controls the distance measuring
 def loop_a():
     while 1:    
         distance = rr.get_distance()
-#        print (distance)
         if distance < 20:
             print (distance)
             rr.reverse(2, motor_speed)
             print 'sensor'            
 #            break
 
-# This will control the movement of your robot and display on your screen
-
+# Start Process (sensor) loop
 Process(target=loop_a).start()
 
+# This will control the movement of your robot and display on your screen
 try: 
     while True:
         keyp = readkey()
@@ -75,7 +74,7 @@ try:
         elif keyp == ' ':
             rr.stop()
             print 'end stop'
-        elif ord(keyp) == 3:
+        elif ord(keyp) == 3:  #Press CTRL-c TWICE to quit the program
             print 'break'
             break
 
