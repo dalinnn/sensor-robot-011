@@ -1,5 +1,8 @@
 # sensor-robot-011
 
-RaspPiRobot Rover kit using the RaspiRobotBoard3 and ultrasonic rangefinder - all manufactured by MonkMakes.com
+RaspPiRobot Rover Kit using the RasPiRobotBoard3 and ultrasonic rangefinder - manufactured and supplied by MonkMakes.com
 
-Simple python code using multiprocessing to enable sensor to be operational at the same time as the robot is being controlled by keystrokes.
+This is a python program developed from Simon Monk's '08_manual_robot.py' program that is included in the Rover Kit. By using multiprocessing it is possible to enable the sensor to be operational at the same time as the robot is being controlled by keystrokes.
+
+Further work needs to be done on this program:
+1) 
