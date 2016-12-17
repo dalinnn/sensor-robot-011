@@ -1,4 +1,4 @@
-# 08_manual_robot_continuous.py
+# based on Simon Monk's '08_manual_robot_continuous.py'
 # Use the arrow keys to direct the robot
 
 from multiprocessing import Process
